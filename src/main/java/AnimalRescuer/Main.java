@@ -1,23 +1,43 @@
 package AnimalRescuer;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        Dog falco = new Dog();
+        Dog dog = new Dog();
+        dog.setName("Falco");
+        dog.setAge(2);
+        dog.setWeight(30.5);
+        dog.setBreed("samoyed");
+        dog.setColor("white");
+        dog.setGender("Male");
 
-        System.out.println(falco.name + " is a dog from the " + falco.breed + " breed, is "
-                + falco.gender + " and his color is " + falco.color + ", is "
-                + falco.age + " years old and weighs " + falco.weight + "kg.");
-        falco.talk();
-        falco.eat();
+        System.out.println(dog.getName() + " is a dog from the " + dog.getBreed() + " breed, is "
+                + dog.getGender() + " and his color is " + dog.getColor() + ", is "
+                + dog.getAge() + " years old and weighs " + dog.getWeight() + " kg.");
 
-        Veterinarian popescu = new Veterinarian();
-        System.out.println(popescu.nume + " is a " + popescu.specialitate + ".");
+        dog.setTalk("ham-ham");
+        dog.setEat("oase");
+        System.out.println(dog.getName()+" likes to do \""+dog.getTalk()+"\" and gnaw \""+ dog.getEat()+"\".");
 
-        Adoption florescu = new Adoption();
-        System.out.println(florescu.nume + " has " + florescu.amountofmoneyavailable + " euro at her disposal.");
+        Veterinarian veterinarian = new Veterinarian();
+        veterinarian.setName("Popescu Ion");
+        veterinarian.setSpecialitate("veterinarian");
+        System.out.println(veterinarian.getName() + " is a " + veterinarian.getSpecialitate() + ".");
 
-        Recreation.recreere();
+        Adoption adoption = new Adoption();
+        adoption.setName("Florescu Maria");
+        adoption.setAmountofmoneyavailable(30);
+        System.out.println(adoption.getName() + " has " + adoption.getAmountofmoneyavailable() + " euro at her disposal.");
+
+        Recreation recreation=new Recreation();
+        recreation.setName("relax");
+        recreation.setRecreere("running");
+        System.out.println("For "+recreation.getName()+" "+dog.getName()+" likes to "+recreation.getRecreere()+".");
+
+        AnimalFood animalFood=new AnimalFood();
+        animalFood.setName("uscata - Alpha");
+        animalFood.setPrice(200);
+        animalFood.setAmount(55);
+        animalFood.setAvailabilityinstock(1);
+        System.out.println("Mancarea \""+animalFood.getName() + "\" are pretul \"" +animalFood.getPrice() + " ron\" pentru cantitatea de \"" +animalFood.getAmount() + " kg/sac\" si in stoc este \"" +animalFood.getAvailabilityinstock()+"\" buc.");
     }
 }
